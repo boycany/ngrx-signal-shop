@@ -1,0 +1,10 @@
+// 讓 class 是 material-symbols-outlined 的 icon 看起來線條變細一點 (wght = weight)
+@mixin symbol($weight: 200) {
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" #{$weight},
+      "GRAD" 0,
+      "opsz" 48;
+  }
+}

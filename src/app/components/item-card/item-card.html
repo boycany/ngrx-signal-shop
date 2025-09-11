@@ -1,0 +1,20 @@
+<img [ngSrc]="image()" alt="product image" width="180" height="180" priority />
+<div class="details">
+  <div class="name">
+    {{ product().name }}
+  </div>
+  <div class="description">
+    {{ product().description }}
+  </div>
+  <app-ranking [value]="product().ranking"></app-ranking>
+</div>
+<div class="aux">
+  <div class="price">
+    {{ product().unitPrice | currency }}
+  </div>
+  @if (isInCart()) {
+    <button matButton="tonal">View Cart</button>
+  } @else {
+    <button matButton="filled">Add to Cart</button>
+  }
+</div>

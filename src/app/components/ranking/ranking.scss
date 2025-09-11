@@ -1,0 +1,19 @@
+// @use "icons";
+
+:host {
+  font-weight: semi-bold;
+  color: var(--t);
+  font-size: 20px;
+
+  // @include icons.symbol();
+  // span {
+  //   font-weight: semi-bold;
+  // }
+  // mat-icon {
+  //   color: var(--t);
+
+  //   &.filled {
+  //     font-variation-settings: "FILL" 1;
+  //   }
+  // }
+}

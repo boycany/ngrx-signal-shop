@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+
+    .name {
+      font: var(--mat-sys-title-large);
+      font-weight: 500;
+    }
+
+    .description {
+      font: var(--mat-sys-body-medium);
+    }
+  }
+
+  .aux {
+    margin-inline-start: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+
+    .price {
+      font: var(--mat-sys-title-large);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+// @use "icons";
+@use "@angular/material" as mat;
+
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  gap: 32px;
+  font-size: 1.5em;
+
+  // @include icons.symbol();
+
+  mat-icon.logo {
+    font-size: 2.5em;
+    flex-shrink: 0;
+    @include mat.icon-overrides(
+      (
+        color: var(--p),
+      )
+    );
+  }
+
+  .cart-button {
+    margin-inline-start: auto;
+    margin-inline-end: 8px;
+
+    mat-icon {
+      // font-variation-settings: "wght" 400;
+      font-size: 28px;
+    }
+  }
+
+  span {
+    white-space: nowrap;
+    font-weight: semi-bold;
+  }
+
+  input {
+    font-size: 16px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 400px;
+    width: 100px;
+    border-radius: 20px;
+    padding: 8px;
+    outline: 0 transparent;
+    border: 2px solid var(--s-70);
+    color: var(--s-50);
+
+    &::placeholder {
+      color: var(--s-50);
+      opacity: 0.5;
+    }
+  }
+}
