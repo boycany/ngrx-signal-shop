@@ -6,7 +6,7 @@ import { Ranking } from '../ranking/ranking';
 
 @Component({
   selector: 'app-item-card',
-  imports: [NgOptimizedImage, CurrencyPipe, MatButtonModule, Ranking],
+  imports: [CurrencyPipe, MatButtonModule, Ranking],
   templateUrl: './item-card.html',
   styleUrl: './item-card.scss',
 })

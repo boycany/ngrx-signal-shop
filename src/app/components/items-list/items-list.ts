@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
-import { sampleProductItems } from './view-model/product-item.vm';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ItemCard } from '../item-card/item-card';
+import { ShopStore } from '../../store/shop.store';
 
 @Component({
   selector: 'app-items-list',
@@ -9,5 +9,6 @@ import { ItemCard } from '../item-card/item-card';
   styleUrl: './items-list.scss',
 })
 export class ItemsList {
-  readonly products = signal(sampleProductItems);
+  readonly store = inject(ShopStore);
+  // readonly products = computed(() => this.store.productListVm().productItems);
 }

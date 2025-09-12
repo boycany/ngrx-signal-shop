@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CartItemVm } from './view-model/cart-item.vm';
 import { CurrencyPipe } from '@angular/common';
 import { CartItem } from './components/cart-item/cart-item';
 import { MatButtonModule } from '@angular/material/button';
+import { ShopStore } from '../../store/shop.store';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './cart.scss',
 })
 export class Cart {
+  readonly store = inject(ShopStore);
   readonly cartItems = signal<CartItemVm[]>([
     {
       id: 'async-flow-controller',

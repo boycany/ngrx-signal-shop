@@ -1,6 +1,6 @@
 <app-toolbar></app-toolbar>
 <app-items-list></app-items-list>
 <router-outlet />
-@if (isCartShowing()) {
+@if (store.cartVm().isVisible) {
   <app-cart></app-cart>
 }
