@@ -7,7 +7,7 @@ export function setSearchWord(
   return (_) => ({ searchWord });
 }
 
-export function addToCart(productId: number): PartialStateUpdater<ShopState> {
+export function addToCart(productId: string): PartialStateUpdater<ShopState> {
   return (state) => {
     const cartQuantities = { ...state.cartQuantities };
     cartQuantities[productId] = (cartQuantities[productId] ?? 0) + 1;
@@ -24,13 +24,13 @@ export function hideCart(): PartialStateUpdater<ShopState> {
 }
 
 export function incrementQuantity(
-  productId: number,
+  productId: string,
 ): PartialStateUpdater<ShopState> {
   return addToCart(productId);
 }
 
 export function decrementQuantity(
-  productId: number,
+  productId: string,
 ): PartialStateUpdater<ShopState> {
   return (state) => {
     const cartQuantities = { ...state.cartQuantities };

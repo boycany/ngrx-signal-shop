@@ -13,8 +13,10 @@
     {{ product().unitPrice | currency }}
   </div>
   @if (isInCart()) {
-    <button matButton="tonal">View Cart</button>
+    <button matButton="tonal" (click)="store.viewCart()">View Cart</button>
   } @else {
-    <button matButton="filled">Add to Cart</button>
+    <button matButton="filled" (click)="store.addToCart(product().id)">
+      Add to Cart
+    </button>
   }
 </div>

@@ -1,6 +1,6 @@
 @let vm = store.cartVm();
 
-<div class="overlay"></div>
+<div class="overlay" (click)="store.hideCart()"></div>
 <div class="content">
   <h1>
     Your Cart ({{ vm.itemsCount }} item{{ vm.itemsCount === 1 ? "" : "s" }})
@@ -24,6 +24,12 @@
     <div class="value">{{ vm.total | currency }}</div>
   </div>
   <div class="actions">
-    <button matButton="filled">Checkout</button>
+    <button
+      matButton="filled"
+      (click)="store.checkoutCart()"
+      [disabled]="!vm.canCheckout"
+    >
+      Checkout
+    </button>
   </div>
 </div>

@@ -32,6 +32,7 @@ export function buildCartVm(
   const items = buildCartItems();
   const subtotal = items.reduce((sum, item) => sum + item.total, 0);
   const tax = subtotal * taxRate;
+  const isActive = items.length > 0;
 
   return {
     items,
@@ -39,8 +40,9 @@ export function buildCartVm(
     tax,
     itemsCount: items.length,
     total: subtotal + tax,
-    isActive: items.length > 0,
+    isActive,
     isVisible: cartVisible,
+    canCheckout: isActive,
   };
 
   function buildCartItems(): CartItemVm[] {

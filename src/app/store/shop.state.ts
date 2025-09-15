@@ -9,6 +9,8 @@ export interface ShopState {
   readonly taxRate: number;
 }
 
+export type PersistedShopState = Pick<ShopState, 'cartQuantities'>;
+
 export const initialShopState: ShopState = {
   products: ALL_PRODUCTS,
   searchWord: '',
