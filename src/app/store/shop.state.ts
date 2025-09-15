@@ -12,10 +12,7 @@ export interface ShopState {
 export const initialShopState: ShopState = {
   products: ALL_PRODUCTS,
   searchWord: '',
-  cartQuantities: {
-    'signal-booster': 2,
-    // 'reactive-refresher': 1,
-  },
-  cartVisible: true,
+  cartQuantities: {},
+  cartVisible: false,
   taxRate: 0.08,
 };
